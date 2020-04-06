@@ -11,7 +11,7 @@ module.exports = {
       twitter: `maguro_s`,
     },
   },
-  pathPrefix: "/mamamaguroBlog",
+  pathPrefix: `/mamamaguroBlog`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -63,7 +63,7 @@ module.exports = {
       options: {
         name: `Mamamaguro Blog`,
         short_name: `Mamamagulog`,
-        start_url: `/`,
+        start_url: `/mamamaguroBlog`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
