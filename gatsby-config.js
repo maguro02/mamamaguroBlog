@@ -1,16 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Mamamaguro Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Mamamaguro`,
+      summary: `ぷろぐらむをかいています`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `プログラムを書いていて思ったことをメモする`,
+    siteUrl: `https://maguro02.github.io/mamamaguroBlog`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `maguro_s`,
     },
   },
+  pathPrefix: "/mamamaguroBlog",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -60,13 +61,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Mamamaguro Blog`,
+        short_name: `Mamamagulog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/my-icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
