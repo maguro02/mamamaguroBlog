@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/mamamaguroBlog`,
   siteMetadata: {
     title: `Mamamaguro Blog`,
     author: {
@@ -11,7 +12,6 @@ module.exports = {
       twitter: `maguro_s`,
     },
   },
-  pathPrefix: `/mamamaguroBlog`,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
