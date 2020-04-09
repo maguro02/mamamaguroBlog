@@ -8,6 +8,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
+import styled from "@emotion/styled"
 
 
 const Bio = () => {
@@ -30,14 +33,17 @@ const Bio = () => {
       }
     }
   `)
+  
+  const Wrapper = styled.div`
+    display: flex;
+    color: #F5F5F5;
+    align-items: center;
+    justify-content: center;
+  `
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-      }}
-    >
+    <Wrapper>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
@@ -45,11 +51,11 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+      <p css={css`margin-left: 1rem;`}>
+        <strong>{author.name}</strong> {author.summary}
         {` `}
       </p>
-    </div>
+    </Wrapper>
   )
 }
 
