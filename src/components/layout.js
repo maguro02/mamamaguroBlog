@@ -2,65 +2,66 @@ import React from "react"
 import { Link } from "gatsby"
 
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core"
+import { Global, css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 
-import { rhythm, scale } from "../utils/typography"
+import Image from "gatsby"
+
+import HeaderImage from "../../content/assets/header.png"
+
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
+  let isRoot = location.pathname === rootPath
   let header
 
-  if (location.pathname === rootPath) {
+  const Header = styled.div`
+    display: flex;
+    min-height: 60vh;
+    background-image: url(${HeaderImage});
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+  `
+
+  if (isRoot) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h1>
+      <Header>
+        <div>
+          <h1 css={css`margin-top: 0; margin-bottom: 0; font-size: 5rem; color: #f5f5f5;`}>
+            <Link
+              to={`/`}
+            >
+              {title}
+            </Link>
+          </h1>
+        </div>
+      </Header>
     )
   } else {
-    header = (
-      <h3
-        style={{
-          marginTop: 0,
-        }}
-      >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-      </h3>
-    )
+    header = ""
   }
+
+
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
-      <main>{children}</main>
+    <div>
+      <Global styles={css`
+        html {
+          font-size: 62.5%;
+        }
+        body {
+          font-size: 1.3rem;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          a {
+            color: inherit;
+            :hover{box-shadow: none;}
+          }
+        }
+        `}
+      />
+      {header}
+      {children}
       <footer>
         © {new Date().getFullYear()} Mamamaguro
       </footer>

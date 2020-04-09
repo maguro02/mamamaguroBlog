@@ -1,7 +1,8 @@
 ---
 title: Hello World
-date: "2020-04-06T22:07"
-description: "Hello World"
+date: "2020-04-06"
+description: "ぎゃっつびーのてすとをしている"
+tags: ["gatsby", "test"]
 ---
 
-テスト記事
+テスト用の記事ですよ
