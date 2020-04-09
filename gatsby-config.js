@@ -8,9 +8,6 @@ module.exports = {
     },
     description: `プログラムを書いていて思ったことをメモする`,
     siteUrl: `https://maguro02.github.io/mamamaguroBlog`,
-    social: {
-      twitter: `maguro_s`,
-    },
   },
   plugins: [
     {

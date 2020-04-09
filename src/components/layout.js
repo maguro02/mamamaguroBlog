@@ -1,6 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
+/** @jsx jsx */
+import { css, jsx } from "@emotion/core"
+import styled from "@emotion/styled"
+
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
@@ -31,7 +35,6 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
         }}
       >
@@ -59,7 +62,7 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}
+        © {new Date().getFullYear()} Mamamaguro
       </footer>
     </div>
   )
